@@ -118,14 +118,14 @@ public class Policy
    
    // Calculate holder's BMI
    
-   public double calcBMI() {
+   public double getBMI() {
       double BMI = (weight * 703 ) / (height * height);
       return BMI;
    }
    
    // Calculate holder's policy price
       
-   public double calcPolicyPrice() {
+   public double getPolicyPrice() {
       double base_price = 600.0;
       if (age > 50) {
          base_price += 75.0;
@@ -135,14 +135,14 @@ public class Policy
          base_price += 100.0;
       }
       
-      double BMI = calcBMI();
+      double BMI = getBMI();
       
       if (BMI > 35) {
          double rateCalc = (BMI - 35) * 20;
          base_price +=  rateCalc;
       }
       
-      return BMI;
+      return base_price;
    }
    
 }
