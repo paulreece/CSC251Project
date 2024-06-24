@@ -4,7 +4,7 @@ public class Policy
    // Fields
    private int policy_number;
    private String provider_name;
-   
+   private static int policyCount = 0;
    
    /** 
       No-argument constructor sets default values for all fields
@@ -15,6 +15,7 @@ public class Policy
    
       policy_number = 0;
       provider_name = "";
+      policyCount ++;
       
    }
    
@@ -33,17 +34,12 @@ public class Policy
    */
    
    
-   public Policy(int policy_n, String provider_n, String holder_first_n, String holder_last_n, int a, String smoker_st, double ht, double wt)
+   public Policy(int policy_n, String provider_n)
    {
       
       policy_number = policy_n;
       provider_name = provider_n;
-      holder_first_name = holder_first_n;
-      holder_last_name = holder_last_n;
-      age = a;
-      smoker_status = smoker_st;
-      height = ht;
-      weight = wt;
+      policyCount ++;
       
    }
    
@@ -85,6 +81,11 @@ public class Policy
    
    public String getProviderName(){
       return provider_name;
+   }
+   
+   public int getPolicyCount() 
+   {
+      return policyCount;
    }
    
    public String toString() 
