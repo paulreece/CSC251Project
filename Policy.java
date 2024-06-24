@@ -5,7 +5,7 @@ public class Policy
    private int policy_number;
    private String provider_name;
    private static int policyCount = 0;
-   
+   private PolicyHolder policyHolder;
    /** 
       No-argument constructor sets default values for all fields
    */
@@ -54,6 +54,10 @@ public class Policy
       policy_number = policy_n;
    }
       
+   public void setPolicyHolder(PolicyHolder policy_h)
+   {
+      policyHolder = new PolicyHolder(policy_h);
+   }
    /**
       Sets the provider name.
       
@@ -83,16 +87,22 @@ public class Policy
       return provider_name;
    }
    
-   public int getPolicyCount() 
+   public static int getPolicyCount() 
    {
       return policyCount;
    }
    
    public String toString() 
    {
-      String str = "Policy Number: " + policy.getPolicyNumber()) +
-                  "\nProvider Name: " + policy.getProviderName()) + "\n";
-                  
+      String str = "Policy Number: " + policy_number +
+                  "\nProvider Name: " + provider_name + "\n";
+      return str;           
    }
+   
+   public PolicyHolder getPolicyHolder() 
+   {
+      return new PolicyHolder(policyHolder);
+   }
+   
    
 }

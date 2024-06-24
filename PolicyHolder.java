@@ -1,4 +1,4 @@
-class PolicyHolder 
+public class PolicyHolder 
 {
    private String holder_first_name;
    private String holder_last_name;
@@ -44,6 +44,16 @@ class PolicyHolder
       height = ht;
       weight = wt;
       
+   }
+   
+   public PolicyHolder(PolicyHolder policy_h)
+   {
+      holder_first_name = policy_h.holder_first_name;
+      holder_last_name = policy_h.holder_last_name;
+      age = policy_h.age;
+      smoker_status = policy_h.smoker_status;
+      height = policy_h.height;
+      weight = policy_h.weight;
    }
    /**
       Sets the policy holder's first name.
@@ -210,14 +220,14 @@ class PolicyHolder
    
    public String toString() 
    {
-      String str = "Policyholder’s First Name: " + policy.getHolderFirst() +
-                  "\nPolicyholder’s Last Name: " + policy.getHolderLast()) +
-                  "\nPolicyholder’s Age: " + policy.getAge()) +
-                  "\nPolicyholder’s Smoking Status: " + policy.getSmokeStatus()) +
-                  "\nPolicyholder’s Height: " + policy.getHeight()+ " inches")  +
-                  "\nPolicyholder’s Weight: " + policy.getWeight()+ " pounds") +
-                  "\nPolicyholder’s BMI: %,.2f\n", policy.getBMI()) +
-                  "\nPolicy Price: $%,.2f\n",policy.getPolicyPrice()) + "\n";
+      String str = "Policyholder’s First Name: " + holder_first_name +
+                  "\nPolicyholder’s Last Name: " + holder_last_name +
+                  "\nPolicyholder’s Age: " + age +
+                  "\nPolicyholder’s Smoking Status: " + smoker_status +
+                  "\nPolicyholder’s Height: " + height + " inches"  +
+                  "\nPolicyholder’s Weight: " + weight + " pounds" +
+                  String.format("\nPolicyholder’s BMI: %,.2f", this.getBMI()) +
+                  String.format("\nPolicy Price: $%,.2f\n", this.getPolicyPrice());
       return str;
       
    }
